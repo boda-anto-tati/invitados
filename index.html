@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Invitados</title>
+
+        <!-- GOOGLE FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="./css/style.css">
+        
+    </head>
+    <body>
+        <header>
+            <img src="./img/foto.png" alt="Foto Anto & Tati" class="img-header">
+            <p class="fecha">13 · 12 · 2026</p>
+        </header>
+        <main>
+            <h1 class="titulo">Anto & Tati</h1>
+            <p class="p-intro">¡Descubrí algunos de tus amigos y conocidos que también nos acompañarán ese día!</p>
+            <section class="contenido-principal">
+                <div class="contenedor-form">
+                    <p>Ingresá tu nombre y apellido:</p>
+                    <form id="formBuscarInvitado">
+                        <input type="text" id="nombreInvitado" placeholder="Rodrigo González" required>
+                        <button type="submit">Buscar</button>
+                    </form>
+                </div>
+                <p id="mensaje"></p>
+                <div>
+                    <ul id="listaInvitados"></ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- Supabase -->
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
