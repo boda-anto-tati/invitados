@@ -59,6 +59,13 @@ formulario.addEventListener('submit', async (event) => {
         'valentina pintos': [
             'Caterine Balerio',
             'Paula Taño'
+        ],
+        'caterine balerio': [
+            'Valentina Pintos',
+            'Paula Taño',
+            'Fiorella Pereira',
+            'Celeste Santiesteban',
+            'Juan Rodríguez'
         ]
     };
 
