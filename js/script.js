@@ -1,3 +1,4 @@
+
 const SUPABASE_URL = 'https://rileeibbxobqqlxmkcvq.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_kroDLdSTszQsW0pf0XAqlw_0L14vAIi';
 
@@ -12,7 +13,7 @@ const inputNombre = document.getElementById('nombreInvitado');
 const mensaje = document.getElementById('mensaje');
 const listaInvitados = document.getElementById('listaInvitados');
 
-
+// Permitir solamente letras y espacios
 inputNombre.addEventListener('input', () => {
     inputNombre.value = inputNombre.value.replace(
         /[^a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]/g,
@@ -24,10 +25,10 @@ inputNombre.addEventListener('input', () => {
 function normalizarNombre(nombre) {
     return nombre
         .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '') 
-        .replace(/\s+/g, ' ')            
-        .trim()   
-        .toLowerCase();   
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .toLowerCase();
 }
 
 formulario.addEventListener('submit', async (event) => {
@@ -67,14 +68,14 @@ formulario.addEventListener('submit', async (event) => {
             'Celeste Santiesteban',
             'Juan Rodríguez'
         ],
-        'martina lópez':[
+        'martina lópez': [
             'Florencia Molfino',
             'Santiago Pereira',
             'Valeria Pereira',
             'Camila Maya',
             'Federico Suárez'
         ],
-        'araceli garcía':[
+        'araceli garcía': [
             'Federico Suárez',
             'Nahuel De León',
             'Belén Díaz',
@@ -83,14 +84,14 @@ formulario.addEventListener('submit', async (event) => {
             'Caterin López',
             'Cecilia Dalmás'
         ],
-        'victoria díaz':[
+        'victoria díaz': [
             'Bruno Dotti',
             'Nahuel De León',
             'Cecilia Dalmás',
             'Santiago Pontet',
             'Daniela Carro'
         ],
-        'bruno dotti':[
+        'bruno dotti': [
             'Victoria Díaz',
             'Nahuel De León',
             'Santiago Pontet',
@@ -98,11 +99,19 @@ formulario.addEventListener('submit', async (event) => {
         ]
     };
 
+    // Normalizar las claves de los casos especiales
+    const casosEspecialesNormalizados = Object.fromEntries(
+        Object.entries(casosEspeciales).map(([nombre, invitados]) => [
+            normalizarNombre(nombre),
+            invitados
+        ])
+    );
+
     // Verificar si es un caso especial
-    if (casosEspeciales[nombreNormalizado]) {
+    if (casosEspecialesNormalizados[nombreNormalizado]) {
         mensaje.textContent = '';
 
-        casosEspeciales[nombreNormalizado].forEach((nombre) => {
+        casosEspecialesNormalizados[nombreNormalizado].forEach((nombre) => {
             const li = document.createElement('li');
             li.classList.add('invitado-item');
             li.textContent = nombre;
