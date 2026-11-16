@@ -66,6 +66,35 @@ formulario.addEventListener('submit', async (event) => {
             'Fiorella Pereira',
             'Celeste Santiesteban',
             'Juan Rodríguez'
+        ],
+        'Martina López':[
+            'Florencia Molfino',
+            'Santiago Pereira',
+            'Valeria Pereira',
+            'Camila Maya',
+            'Federico Suárez'
+        ],
+        'Araceli García':[
+            'Federico Suárez',
+            'Nahuel De León',
+            'Belén Díaz',
+            'Guillermo Basino',
+            'Camila Maya',
+            'Caterin López',
+            'Cecilia Dalmás'
+        ],
+        'Victoria Díaz':[
+            'Bruno Dotti',
+            'Nahuel De León',
+            'Cecilia Dalmás',
+            'Santiago Pontet',
+            'Daniela Carro'
+        ],
+        'Bruno Dotti':[
+            'Victoria Díaz',
+            'Nahuel De León',
+            'Santiago Pontet',
+            'Daniela Carro'
         ]
     };
 
